@@ -1,3 +1,3 @@
 ---
 
-- name: Download Csr from Github
+- include: ../../common/clone_csr.yml
