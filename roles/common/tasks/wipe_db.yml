@@ -1,0 +1,9 @@
+---
+
+- name: Ensuring MySQL is installed
+  apt: pkg=mysql-server update-cache=yes state=present
+  sudo: yes
+
+- name: MySQL ROOT Dumping DB
+  mysql_db: name={{db_schema}} login_user=root login_password= state=absent
+  ignore_errors: yes

@@ -1,0 +1,5 @@
+---
+
+- name: Install Apache2 Server
+  apt: pkg=apache2 state=present
+  sudo: yes

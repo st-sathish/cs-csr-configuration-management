@@ -1,0 +1,4 @@
+---
+
+- name: Checkout correct version of CSR
+  git: repo={{git_repo_location}} dest={{csr_base_dir}} version={{csr_version}}

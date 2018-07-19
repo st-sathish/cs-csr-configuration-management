@@ -1,0 +1,7 @@
+---
+
+- name: Install MySQL Server
+  apt: pkg=mysql-server state=present
+  sudo: yes
+
+- include: ../../common/tasks/clean_db.yml

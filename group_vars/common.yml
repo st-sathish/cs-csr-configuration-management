@@ -1,0 +1,25 @@
+---
+
+# The location of the git repository you want to fetch
+git_repo_location: https://github.com/st-sathish/cs-csr-php.git
+
+# CSR Version
+csr_version: 0.0.1
+
+#The CSR code directory
+csr_base_dir: /var/www
+
+#The database schema's name
+db_schema: csr
+#The database server
+db_host: "{{groups['mysql'][0]}}"
+#True to generate the DB tables on startup, false use the schema below
+db_ddl: false
+#The database schema location
+db_schema_location: "{{csr_base_dir}}/docs/scripts/ddl/mysql5.sql"
+#The full URL of the database server
+db_url: "jdbc:mysql://{{db_host}}/{{db_schema}}"
+#The database user
+db_user: csr
+#The database password
+db_pass: csr 
