@@ -1,5 +1,19 @@
 ---
 
+# Install apache2 server
 - name: Install Apache2 Server
-  apt: pkg=apache2 state=present
+  apt: pkg=apache2 update_cache=yes state=latest
+  sudo: yes
+
+# Install PHP
+- include: ../../php-build/tasks/main.yml
+
+# Install PHP apache2 module
+- name: Install php module for apache2
+  apt: pkg=libapache2-mod-php7.0 state=present
+  sudo: yes
+
+# Start apache2 service
+- name: Start Apache2 Service
+  service: name=apache2 state=running enabled=yes
   sudo: yes
