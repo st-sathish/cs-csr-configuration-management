@@ -10,7 +10,7 @@
 
 # Install PHP apache2 module
 - name: Install php module for apache2
-  apt: pkg=libapache2-mod-php7.0 state=present
+  apt: pkg=libapache2-mod-php7.1 state=present
   sudo: yes
 
 # Start apache2 service

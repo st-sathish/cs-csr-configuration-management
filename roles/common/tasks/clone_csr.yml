@@ -1,0 +1,10 @@
+---
+
+- name: Ensuring Git is installed
+  apt: pkg=git state=present
+  sudo: yes
+
+- name: Cloning CSR
+  git: repo={{git_repo_location}} dest={{csr_base_dir}} update=yes version={{csr_version}} force=yes
+
+- include: checkout_csr.yml

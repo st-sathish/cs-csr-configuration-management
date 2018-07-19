@@ -1,3 +1,28 @@
 ---
 
 # This playbooks deploys a full CSR services
+- hosts: apache2
+  user: "{{csr_user}}"
+
+  roles:
+    - apache2-build
+  vars_files:
+    - group_vars/common.yml
+
+
+- hosts: mysql
+  user: "{{csr_user}}"
+
+  roles:
+    - mysql-build
+  vars_files:
+    - group_vars/common.yml
+
+
+- hosts: admin
+  user: "{{csr_user}}"
+
+  roles:
+    - admin-build
+  vars_files:
+    - group_vars/common.yml
